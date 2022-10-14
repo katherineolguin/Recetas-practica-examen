@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>ver receta</title>
+</head>
+<body>
+
+    <header class="d-flex justify-content-between align-items-center text-light  text-center p-2 bg-dark mb-3">
+        <h1>Bienvenid@! {{user.first_name}}</h1>
+        
+        <a href="/dashboard" class="btn btn-secondary">HOME</a>
+
+
+        <a href="/logout" class="btn btn-info">logout</a>
+    </header>
+
+
+    <div class="card col-8 mx-auto mt-5">
+        <div class="card-header">
+            <b>Nombre</b>{{recipeId.name}}
+
+        </div>
+        <div class="card-body">
+            <div class="">
+                <b>Instrucciones</b>{{recipeId.instructioms}}
+            </div>
+            <div class="">
+
+                <b>Descripcion</b>{{recipeId.description}}
+            </div>
+            <div class="">
+                {% if recipeId.under_30 ==0 %}
+                NO
+                {% else %}
+                SI
+                {% endif %}
+            </div>
+            
+        </div>
+        <div class="card-footer">
+            <b>Posteado por:</b>{{recipeId.first_name}}
+        </div>
+    </div>
+
+    
+</body>
+</html>
